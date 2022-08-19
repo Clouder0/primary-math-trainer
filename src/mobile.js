@@ -1,11 +1,7 @@
-document.addEventListener("keydown", onKeydown);
+document.addEventListener("keydown", onClick);
 window.addEventListener("load", () => init());
 
 import * as common from "./common.js"
-
-if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-    window.location.replace("mobile.html");
-}
 
 function init() {
     genQuestion(common.myGen);
@@ -13,15 +9,24 @@ function init() {
     updFooter();
 }
 
-function onKeydown(e) {
-    if (e.key >= '0' && e.key <= '9' || e.key == "Backspace") {
-        common.typeAns(e.key);
+let buttons = document.getElementsByTagName("button");
+for(let btn of buttons)
+{
+    btn.addEventListener("click", onClick);
+}
+
+function onClick() {
+    let key = this.textContent;
+    if (key >= '0' && key <= '9' || key == "<") {
+        if (key == "<") key = "Backspace";
+        common.typeAns(key);
         updAns();
     }
-    else if (e.key == "Escape") {
-        switchState();
+    else if (key == "C") {
+        common.clearAns();
+        updAns();
     }
-    else if (e.key == "Enter") {
+    else if (key == "Submit") {
         submitAns();
     }
 }
@@ -58,23 +63,26 @@ function genQuestion(gen) {
     q.innerHTML = common.genQuestion(gen);
 }
 
-function onHeaderClick(e) {
+document.getElementsByTagName("header")[0].addEventListener("click", onHeaderClick);
+function onHeaderClick() {
     switchState();
 }
 
 let state = 1;
 function switchState() {
     if (state) {
-        let wrapper = document.getElementsByClassName("wrapper")[0];
-        wrapper.style.visibility = "hidden";
+        document.getElementsByClassName("wrapper")[0].style.visibility = "hidden";
+        document.getElementsByClassName("numpad")[0].style.visibility = "hidden";
+        document.getElementsByClassName("numpad-wrapper")[0].classList.add("main-stopped");
         document.getElementsByTagName("main")[0].classList.add("main-stopped");
-        document.getElementById("top").innerHTML = "Press &nbsp; <kbd>Esc</kbd> &nbsp;or &nbsp;<strong>Click Here</strong>&nbsp; to continue."
+        document.getElementById("top").innerHTML = "Press &nbsp; <strong>Click Here</strong>&nbsp; to continue.";
     }
     else {
-        let wrapper = document.getElementsByClassName("wrapper")[0];
-        wrapper.style.visibility = "visible";
+        document.getElementsByClassName("wrapper")[0].style.visibility = "visible";
+        document.getElementsByClassName("numpad")[0].style.visibility = "visible";
+        document.getElementsByClassName("numpad-wrapper")[0].classList.remove("main-stopped");
         document.getElementsByTagName("main")[0].classList.remove("main-stopped");
-        document.getElementById("top").innerHTML = "Press &nbsp; <kbd>Esc</kbd> &nbsp;or &nbsp;<strong>Click Here</strong>&nbsp; to stop."
+        document.getElementById("top").innerHTML = "Press &nbsp; <strong>Click Here</strong>&nbsp; to stop.";
     }
     state ^= 1;
 }
