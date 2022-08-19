@@ -13,6 +13,7 @@ TODO List:
 - [x] 计时
 - [ ] 手动选择特定模式
 - [x] Mobile Version
+- [ ] User History(Local Storage)
 - [ ] Statistics Graph
 - [ ] 特定模式能力分析
 - [ ] 排行榜(需要补充后端知识)
