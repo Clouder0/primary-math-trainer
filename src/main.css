@@ -12,6 +12,12 @@ header {
     background-color: blanchedalmond;
     font-size: 6vmin;
     display: flex;
+    align-items: center;
+}
+
+header div {
+    flex: 1 1 auto;
+    display: flex;
     justify-content: center;
     justify-items: center;
 }
@@ -68,4 +74,9 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.github-icon {
+    margin: 12px;
+    color: black;
 }

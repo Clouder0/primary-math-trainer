@@ -85,3 +85,10 @@ button#submit {
     grid-column-end: 4;
     width: auto;
 }
+
+.github-icon {
+    margin: 12px;
+    color: black;
+    align-self: flex-end;
+    font-size: 3em;
+}
