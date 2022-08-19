@@ -58,6 +58,7 @@ function genQuestion(gen) {
     q.innerHTML = common.genQuestion(gen);
 }
 
+document.getElementsByTagName("header")[0].addEventListener("click", onHeaderClick);
 function onHeaderClick(e) {
     switchState();
 }
