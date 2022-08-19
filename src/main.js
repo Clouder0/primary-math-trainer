@@ -49,7 +49,9 @@ function submitAns() {
 
 function updFooter() {
     let footer = document.getElementsByTagName("footer")[0];
-    footer.innerHTML = "已完成：" + common.count + " 正确：" + common.correct + " 错误：" + common.wrong;
+    footer.innerHTML = `已完成：${common.count} 正确：${common.correct}` + 
+        ` 错误：${common.wrong} 平均用时：${(common.sumTime / common.correct).toFixed(0)}ms` + 
+        ` 上次用时：${common.lastSubmitTime}ms`;
 }
 
 function genQuestion(gen) {

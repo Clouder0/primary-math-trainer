@@ -3,6 +3,9 @@ let ans = "";
 let count = 0;
 let correct = 0;
 let wrong = 0;
+let sumTime = 0;
+let startTime = Date.now();
+let lastSubmitTime = 0;
 
 function rnd(l, r) {
     return Math.floor(l + Math.random() * (r - l + 1));
@@ -47,6 +50,10 @@ function submitAns() {
     let ret = ans == nowAns;
     ret ? ++correct : ++wrong;
     nowAns = "?";
+    let now = Date.now();
+    lastSubmitTime = now - startTime;
+    sumTime += lastSubmitTime;
+    startTime = now;
     return ret;
 }
 
@@ -76,4 +83,4 @@ function clearAns()
     nowAns = "?";
 }
 
-export { nowAns, ans, count, correct, wrong, myGen, submitAns, genQuestion, typeAns, clearAns };
+export { nowAns, ans, count, correct, wrong, myGen, submitAns, genQuestion, typeAns, clearAns, sumTime, lastSubmitTime };

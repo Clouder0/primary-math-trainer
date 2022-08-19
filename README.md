@@ -10,7 +10,7 @@
 
 TODO List:
 
-- [ ] 计时
+- [x] 计时
 - [ ] 手动选择特定模式
 - [x] Mobile Version
 - [ ] Statistics Graph
