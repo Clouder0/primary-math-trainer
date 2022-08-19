@@ -44,6 +44,10 @@ main {
     padding-right: 0;
 }
 
+.question-wrong {
+    color: red;
+}
+
 .answer {
     text-align: right;
 }

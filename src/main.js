@@ -86,7 +86,14 @@ function submitAns() {
         ++correct;
         genQuestion(myGen);
     }
-    else ++wrong;
+    else 
+    {
+        document.getElementsByClassName("question")[0].classList.add("question-wrong");
+        setTimeout(() => {
+            document.getElementsByClassName("question")[0].classList.remove("question-wrong");
+        }, 500);
+        ++wrong;
+    }
     nowAns = "?";
     updAns();
     updFooter();
@@ -100,7 +107,9 @@ function updFooter() {
 function genQuestion(gen) {
     let g = gen();
     ans = g[1];
-    katex.render(g[0], document.getElementsByClassName("question")[0], { throwOnErorr: false });
+    let q = document.getElementsByClassName("question")[0];
+    q.classList.remove("question-wrong");
+    katex.render(g[0], q, { throwOnErorr: false });
 }
 
 function onHeaderClick(e) {
