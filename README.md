@@ -11,6 +11,7 @@
 TODO List:
 
 - [x] 计时
+- [ ]暂停不计时并跳过本题
 - [ ] 手动选择特定模式
 - [x] Mobile Version
 - [ ] User History(Local Storage)
