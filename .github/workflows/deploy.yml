@@ -5,7 +5,7 @@ name: Deploy
 
 on:
   push:
-    branches: [ "main","vue" ]
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
