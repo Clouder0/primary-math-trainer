@@ -8,11 +8,13 @@
 
 3 日速成前端产品。其实做到这个程度一天就差不多了。
 
+又花了两天左右学习 Vue，用 Vue 重构了一下。统一了 Mobile 和 PC 两个版本。
+
 TODO List:
 
 - [x] 计时
-- [ ]暂停不计时并跳过本题
-- [ ] 手动选择特定模式
+- [x] 暂停不计时并跳过本题
+- [x] 手动选择特定模式
 - [x] Mobile Version
 - [ ] User History(Local Storage)
 - [ ] Statistics Graph
@@ -22,6 +24,7 @@ TODO List:
 
 ## Credit
 
+- Vue
 - KaTeX
 - W3Schools，教程站。
 - The Odin Project，web 开发入门的一个课程站。
