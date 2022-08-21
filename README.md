@@ -1,6 +1,6 @@
 # 小学数学计算训练器
 
-[点此访问](https://clouder0.github.io/primary-math-trainer/src/)。
+[点此访问](https://clouder0.github.io/primary-math-trainer/)。
 
 做家教时，发现学生两位数加减法、20 以内乘法算的都不熟练、、
 
